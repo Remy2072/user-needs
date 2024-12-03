@@ -119,12 +119,8 @@
 
     @media (min-width: 1024px) {
       border-radius: 2.5rem 2.5rem 0 0;
-      background: linear-gradient(
-        150deg,
-        #fefdff 0%,
-        #fcf9ff 60%,
-        #fbf8ff 100%
-      );
+      background: transparent;
+      border: 2px solid black;
       position: relative;
       top: auto;
       right: auto;
@@ -151,7 +147,6 @@
       transform: translateX(-100%);
       width: var(--radius);
       height: var(--radius);
-      background: radial-gradient(circle at left top, transparent 1.48rem, var(--white) 1.48rem) border-box;
     }
   }
 

@@ -16,7 +16,8 @@
 <style>
     .container {
         width: 100%;
-        background: var(--container-gradient);
+        background: transparent;
+        border: 2px solid black;
         border-radius: 24px;
         padding: 50px 2.188rem;
     }

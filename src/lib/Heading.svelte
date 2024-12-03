@@ -40,7 +40,7 @@
     width: 100%;
     height: 2px;
     margin-top: 45px;
-    background-color: #e9e0e9;
+    background-color: black;
     border-radius: 10px;
     position: absolute;
     bottom: -2rem;
