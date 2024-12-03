@@ -20,7 +20,7 @@
 
 <style>
 	article {
-		border: solid 2px rgba(233, 224, 233, 65);
+		border: solid 2px black;
 		border-radius: 1.563rem;
 		position: relative;
 		padding: 1.25rem 1.5rem 1.25rem 2.875rem;
@@ -38,21 +38,22 @@
 		border-radius: 6.25rem;
 	}
 
-	/* article:hover {
+	article:hover {
 		border: solid 2px var(--blue);
 		transform: scale(1.05);
 		transition: 0.7s;
-	} */
+		filter: blur(12px);
+	}
 
 	h2 {
-		color: var(--purple);
+		color: cyan;
 		font-size: 1.4rem;
 	}
 
 	h3 {
 		font-weight: var(--font-weight-bold);
 		font-size: var(--font-size-sm);
-		color: var(--blue);
+		color: rgb(32, 11, 221);
 		margin-top: 4px;
 	}
 

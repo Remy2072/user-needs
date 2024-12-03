@@ -3,17 +3,23 @@
 
     export let data;
 
-    $: sortedList = data?.weLoveWebList?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) || [];
+    $: sortedList =
+        data?.weLoveWebList?.sort(
+            (a, b) => new Date(b.date_time) - new Date(a.date_time)
+        ) || [];
 
     const formatTime = (dateTime) => {
         const date = new Date(dateTime);
-        return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        return date.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+        });
     };
 
     const formatDate = (dateTime) => {
         const date = new Date(dateTime);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
         return `${day}-${month}`;
     };
 </script>
@@ -32,8 +38,8 @@
                 speaker={item.speaker}
                 title={item.title}
                 shortDesc={item.short_description}
-                time={formatTime(item.date_time)} 
-                date={formatDate(item.date_time)} 
+                time={formatTime(item.date_time)}
+                date={formatDate(item.date_time)}
             />
         {/each}
     {/if}
@@ -63,6 +69,7 @@
         overflow: hidden;
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         @media (min-width: 1024px) {
             grid-row: 1 / 3;
@@ -76,5 +83,11 @@
         object-fit: fill;
         border-radius: 25px;
         border: 2px solid #e9e0e965;
+    }
+
+    picture:hover {
+        filter: blur(20px);
+        transform: scale(1.05);
+        transition: 0.7s;
     }
 </style>
