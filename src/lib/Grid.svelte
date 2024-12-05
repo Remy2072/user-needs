@@ -3,17 +3,24 @@
 
     export let data;
 
-    $: sortedList = data?.weLoveWebList?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) || [];
+    $: sortedList =
+        data?.weLoveWebList
+            ?.filter((item) => item.status === "published")
+            ?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) ||
+        [];
 
     const formatTime = (dateTime) => {
         const date = new Date(dateTime);
-        return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        return date.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+        });
     };
 
     const formatDate = (dateTime) => {
         const date = new Date(dateTime);
-        const day = String(date.getDate()).padStart(2, '0');
-        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
         return `${day}-${month}`;
     };
 </script>
@@ -23,17 +30,17 @@
         <picture>
             <img
                 src={`https://fdnd-agency.directus.app/assets/${sortedList[0].image}`}
-                alt={sortedList[0].speaker}
+                alt={sortedList[0].speaker || "Onbekende spreker"}
             />
         </picture>
 
         {#each sortedList as item}
             <Card
-                speaker={item.speaker}
-                title={item.title}
-                shortDesc={item.short_description}
-                time={formatTime(item.date_time)} 
-                date={formatDate(item.date_time)} 
+                speaker={item.speaker || "Onbekende spreker"}
+                title={item.title || "Geen titel beschikbaar"}
+                shortDesc={item.short_description || "Geen beschrijving"}
+                time={formatTime(item.date_time)}
+                date={formatDate(item.date_time)}
             />
         {/each}
     {/if}
@@ -74,7 +81,7 @@
         width: 100%;
         height: 100%;
         object-fit: fill;
-        border-radius: 25px;
+        border-radius: 1.563rem;
         border: 2px solid #e9e0e965;
     }
 </style>
