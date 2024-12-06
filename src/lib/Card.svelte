@@ -5,7 +5,11 @@
     export let time = "";
     export let date = "";
 
+    
     $: isPast = new Date(date) < new Date();
+    console.log("new Date(date)",new Date(date))
+    console.log("date",date)
+    console.log("new date()",new Date())
 </script>
 
 <article class:is-past={isPast}>
