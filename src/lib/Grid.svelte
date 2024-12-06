@@ -4,16 +4,14 @@
     export let data;
 
     $: sortedList =
-
         data?.weLoveWebList
             ?.filter((item) => item.status === "published")
             ?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) ||
         [];
 
-        data?.weLoveWebList?.sort(
-            (a, b) => new Date(b.date_time) - new Date(a.date_time)
-        ) || [];
-
+    data?.weLoveWebList?.sort(
+        (a, b) => new Date(b.date_time) - new Date(a.date_time)
+    ) || [];
 
     const formatTime = (dateTime) => {
         const date = new Date(dateTime);
@@ -42,15 +40,10 @@
 
         {#each sortedList as item}
             <Card
-
-                speaker={item.speaker || "Onbekende spreker"}
-                title={item.title || "Geen titel beschikbaar"}
-                shortDesc={item.short_description || "Geen beschrijving"}
-
-                speaker={item.speaker}
                 title={item.title}
-                shortDesc={item.short_description}
-
+                speaker={item.speaker}
+                job={item.job_title}
+                link={item.website_link}
                 time={formatTime(item.date_time)}
                 date={formatDate(item.date_time)}
             />
