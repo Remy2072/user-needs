@@ -72,12 +72,13 @@
         width: 100%;
         background-color: transparent;
         padding: clamp(1rem, calc(100vw / 24), 5rem)
-            clamp(1rem, calc(100vw / 24), 5rem) 0
+            clamp(1rem, calc(100vw / 24), 5rem) 6rem
             calc(clamp(1rem, calc(100vw / 24), 5rem) * 2);
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0 auto;
+        position: relative;
     }
 
     footer article {
@@ -115,10 +116,8 @@
     }
 
     footer aside {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        align-items: center;
-        padding: 5rem 0 var(--radius);
+        position: absolute;
+        bottom: 2rem;
+        left: 1rem;
     }
 </style>

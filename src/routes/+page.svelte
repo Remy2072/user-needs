@@ -30,7 +30,7 @@
 
     @media screen and (min-width: 1024px) {
         .container {
-            border-radius: 2.5rem 0 2.5rem 2.5rem;
+            border-radius: 2.5rem;
             padding: 1rem 6.25rem 4rem;
         }
     }

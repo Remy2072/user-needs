@@ -2,15 +2,17 @@
     /**
      * @typedef {Object} Props
      * @property {string} [name]
-     * @property {string} [fdndWidth]
-     * @property {string} [fdndHeight]
+     * @property {string} [logoWidth]
+     * @property {string} [logoHeight]
+     * @property {string} [socialScale]
      */
 
     /** @type {Props} */
     let {
         name = "",
-        fdndWidth = "--fdnd-width",
-        fdndHeight = "--fdnd-height",
+        logoWidth = "--logo-width",
+        logoHeight = "--logo-height",
+        socialScale = "--socials-scale",
     } = $props();
 </script>
 
@@ -30,9 +32,9 @@
     </svg>
 {:else if name == "hva-fdnd"}
     <svg
-        class="svg-container"
-        width={fdndWidth}
-        height={fdndHeight}
+        class="logo-container"
+        width={logoWidth}
+        height={logoHeight}
         viewBox="0 0 212 73"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -140,8 +142,9 @@
     </svg>
 {:else if name == "insta"}
     <svg
-        width="37"
-        height="37"
+        class="socials-container"
+        width={socialScale}
+        height={socialScale}
         viewBox="0 0 37 37"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -167,8 +170,9 @@
     </svg>
 {:else if name == "linkedin"}
     <svg
-        width="37"
-        height="37"
+        class="socials-container"
+        width={socialScale}
+        height={socialScale}
         viewBox="0 0 37 37"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -191,33 +195,42 @@
                 xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAYAAABV7bNHAAAAAXNSR0IArs4c6QAAAs9JREFUeF7tmm1u4jAQhsc0lnqLsjeBqPdoOQntScpBVoE9SXOMSg5xNYWoiAW/Qx05Tjr5U1XBX09ez4xnbEifIAGjfMIEFBBQiAJSQHFGRBWkClIFxRFQBcXxE9ugoijXxtBL3HBZtK69p03TVK+S2YgATQjOKZONc9UKQRIBsrZ8J6I56mxk72vnqj9ozlJAHnU0xvfOVXD98Ae8cGtLBRRSgAIC+0MB9Qfoy4Uawwbdz4nMImfblNIG1d7PVk3zd3cKpCgeF8a0b7l6wGSAvJ8tz+F0oI6QtjkqKRUgGHBZu9zmuN1SAVo5V21CCsk1Ek8CyHt6Qecaa8tnImJblNWTBBCR3zm3XYI4iuEwpKyeRIDoogfrSNzfL+b7/YzPctk9qQDxwuu7u3b58bGrTykc4Ji3HA00zzMloC9IRMRx0D/+x3t6yD1/lBpQdlsITUgBAUJTBFQT+ZrI8N9jAu/n571kgPioEfpYxrT/HTVCbYxpefFd3BTMIbMjaJpibkz7dGsokQwQGuhSuiTU5vv8hmOs0w9za0CK5s1995JRRAP9DNB+jQLQS6q9BRKad9aAiqKpz+Mq5JW699aWosh9tICkIK79Thq9/1pADE6SYpkMoM5T8cKvJebO1SRJsYwe0HGrrM/ct6h0LMlkjh5QaJuE0rysJokdGjUg7K7DMdJvAIRcNayto3re2BWELkwoIFRPQwqYuoLghQkFFJnPUQWB+z0KSAGF95jaILVB1wkg+yGpa6E+kAKzTZgd0hX4XiRaIOoDtVdAqW65oi9xa05aFSSoi6PtoTZIbVD4lvukFBRbhRiqPbKdvXmxoRYYO64CiozEVUGp4qBYqQ/Vvs8thvLDQ60xatzeAEmqlFEzHaCx5H632AYdSr+zp9wvZQo5iyqzXV+i+0HCgSf5MwUEPqsCUkBxO18VpApSBcURUAXF8VMbBPh9AirNhGcWNaXaAAAAAElFTkSuQmCC"
             />
         </defs>
-    </svg>
+    </svg>       
 
     <!-- {:else if name == ''} -->
+
 {/if}
 
 <style>
     :root {
-        --fdnd-width: 212px;
-        --fdnd-height: 73px;
+        --logo-width: 212px;
+        --logo-height: 73px;
+        --socials-scale: 37px;
     }
 
     @media (min-width: 768px) {
         :root {
-            --fdnd-width: calc(212px * 1.1);
-            --fdnd-height: calc(73px * 1.1);
+            --logo-width: calc(212px * 1.1);
+            --logo-height: calc(73px * 1.1);
+            --socials-scale: calc(37px * 1.3);
         }
     }
 
     @media (min-width: 1440px) {
         :root {
-            --fdnd-width: calc(212px * 1.1);
-            --fdnd-height: calc(73px * 1.1);
+            --logo-width: calc(212px * 1.2);
+            --logo-height: calc(73px * 1.2);
+            --socials-scale: calc(37px * 1.5);
         }
     }
 
-    .svg-container {
-        width: var(--fdnd-width);
-        height: var(--fdnd-height);
+    .logo-container {
+        width: var(--logo-width);
+        height: var(--logo-height);
+    }
+
+    .socials-container {
+        width: var(--socials-scale);
+        height: var(--socials-scale);
     }
 </style>
