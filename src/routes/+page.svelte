@@ -16,14 +16,14 @@
 <style>
     .container {
         width: 100%;
-        background: var(--container-gradient);
-        border-radius: 24px;
-        padding: 50px 2.188rem;
+        background: var(--grey);
+        border-radius: 1.563rem;
+        padding: 3.125rem 2.188rem;
     }
 
     @media screen and (min-width: 768px) {
         .container {
-            border-radius: 30px;
+            border-radius: 1.875rem;
             padding: 1rem 3.125rem 2rem;
         }
     }
