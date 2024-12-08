@@ -8,25 +8,6 @@
             ?.filter((item) => item.status === "published")
             ?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) ||
         [];
-
-    data?.weLoveWebList?.sort(
-        (a, b) => new Date(b.date_time) - new Date(a.date_time)
-    ) || [];
-
-    const formatTime = (dateTime) => {
-        const date = new Date(dateTime);
-        return date.toLocaleTimeString([], {
-            hour: "2-digit",
-            minute: "2-digit",
-        });
-    };
-
-    const formatDate = (dateTime) => {
-        const date = new Date(dateTime);
-        const day = String(date.getDate()).padStart(2, "0");
-        const month = String(date.getMonth() + 1).padStart(2, "0");
-        return `${day}-${month}`;
-    };
 </script>
 
 <section>
@@ -44,8 +25,7 @@
                 speaker={item.speaker}
                 job={item.job_title}
                 link={item.website_link}
-                time={formatTime(item.date_time)}
-                date={formatDate(item.date_time)}
+                date_time={item.date_time}
             />
         {/each}
     {/if}
