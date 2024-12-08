@@ -12,8 +12,8 @@
     <ul>
         <li><Svg name="hva-fdnd" /></li>
         <li>
-            <a href="https://www.instagram.com/fdnd.nl/" target=”_blank” attribute><Svg name="insta" /></a>
-            <a href="https://www.linkedin.com/company/fdnd/" target=”_blank” attribute><Svg name="linkedin" /></a>
+            <a href="https://www.instagram.com/fdnd.nl/" aria-label="Link to FDND's Instagram page" target=”_blank” attribute><Svg name="insta" /></a>
+            <a href="https://www.linkedin.com/company/fdnd/" aria-label="Link to FDND's Linkedin page" target=”_blank” attribute><Svg name="linkedin" /></a>
         </li>
     </ul>
 </nav>
