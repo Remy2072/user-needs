@@ -3,13 +3,27 @@
     export let speaker = "";
     export let job = "";
     export let link = "";
-    export let time = "";
-    export let date = "";
+    export let date_time = "";
 
-    $: isPast = new Date(date) < new Date();
-    console.log("new Date(date)", new Date(date));
-    console.log("date", date);
-    console.log("new date()", new Date());
+    const formatTime = (dateTime) => {
+        const date = new Date(dateTime);
+        return date.toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+    };
+
+    const formatDate = (dateTime) => {
+        const date = new Date(dateTime);
+        const day = String(date.getDate()).padStart(2, "0");
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        return `${day}-${month}`;
+    };
+
+    $: formattedTime = formatTime(date_time);
+    $: formattedDate = formatDate(date_time);
+
+    $: isPast = new Date(date_time) < new Date();
 </script>
 
 <article class:is-past={isPast}>
@@ -18,8 +32,8 @@
         <h3 class:is-past={isPast}>{speaker}</h3>
         <p class:is-past={isPast}>{job}</p>
         <div>
-            <time class:is-past={isPast}>{time}</time>
-            <time class:is-past={isPast}>{date}</time>
+            <time class:is-past={isPast}>{formattedTime}</time>
+            <time class:is-past={isPast}>{formattedDate}</time>
         </div>
     </a>
 </article>
@@ -62,46 +76,9 @@
         transition: 0.7s;
     }
 
-    article::before {
-        content: "";
-        height: 6.25rem;
-        width: 3px;
-        background-color: var(--blue);
-        position: absolute;
-        top: 22%;
-        left: 1.563rem;
-        border-radius: 6.25rem;
-    }
-
     h2 {
         color: var(--purple);
         font-size: 1.4rem;
-    }
-
-    h3 {
-        font-weight: var(--font-weight-bold);
-        font-size: var(--font-size-sm);
-        color: var(--blue);
-        margin-top: 4px;
-    }
-
-    p {
-        margin-top: 1.375rem;
-        color: var(--fifthyshadesofgrey);
-        font-weight: var(--font-weight-reg);
-        font-size: var(--font-size-sm);
-    }
-
-    div {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 6px;
-    }
-
-    time {
-        font-weight: var(--font-weight-semi);
-        font-size: 1.25rem;
-        color: var(--black);
     }
 
     h3 {
