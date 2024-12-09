@@ -11,14 +11,10 @@
 <nav>
     <ul>
         <li><Svg name="hva-fdnd" /></li>
-        <li><button id="menu-btn" onclick={toggleMenu}>MENU</button></li>
-    </ul>
-    <ul id="menu-content" class:menu-open={menuOpen}>
-        <li>Home</li>
-        <li>We Love Webs</li>
-        <li>FDND Agency</li>
-        <li>Archief</li>
-        <li><a href="https://www.google.nl">Contact</a></li>
+        <li>
+            <a href="https://www.instagram.com/fdnd.nl/" aria-label="Link to FDND's Instagram page" target=”_blank” attribute><Svg name="insta" /></a>
+            <a href="https://www.linkedin.com/company/fdnd/" aria-label="Link to FDND's Linkedin page" target=”_blank” attribute><Svg name="linkedin" /></a>
+        </li>
     </ul>
 </nav>
 
@@ -28,12 +24,6 @@
         position: relative;
         padding-top: 1rem;
         margin-bottom: -1px;
-
-        @media (min-width: 1024px) {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
     }
 
     nav ul:nth-child(1) {
@@ -41,64 +31,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        @media (min-width: 1024px) {
-            width: 25%;
-            justify-content: center;
-        }
-    }
-
-    nav ul:nth-child(1) li:nth-child(2) {
-        z-index: 5;
-
-        @media (min-width: 1024px) {
-            display: none;
-        }
-    }
-
-    nav ul:nth-child(1) button::before {
-        content: "";
-        z-index: -1;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border: 1px solid var(--blue);
-        background-color: var(--green);
-        border-radius: 10px;
-        right: 2px;
-        top: 2px;
-    }
-
-    nav ul:nth-child(1) button {
-        position: relative;
-        border: 1px solid var(--blue);
-        padding: 0.5rem 1rem;
-        background-color: var(--green);
-        border-radius: 10px;
-        color: var(--blue);
-        font-weight: 700;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    nav ul:nth-child(1) button:hover {
-        right: 1px;
-        top: 1px;
-    }
-
-    nav ul:nth-child(1) button:hover::before {
-        right: 1px;
-        top: 1px;
-    }
-
-    nav ul:nth-child(1) button:active {
-        right: 2px;
-        top: 2px;
-    }
-
-    nav ul:nth-child(1) button:active::before {
-        right: 1px;
-        top: 1px;
     }
 
     nav ul:nth-child(2) {
@@ -158,10 +90,6 @@
                 )
                 border-box;
         }
-    }
-
-    nav ul:nth-child(2).menu-open {
-        right: -1rem;
     }
 
     nav ul:nth-child(2) li {
