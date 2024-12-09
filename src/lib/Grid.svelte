@@ -12,6 +12,7 @@
 
 <section>
     {#if sortedList.length > 0}
+
         <picture>
             <img
                 src={`https://fdnd-agency.directus.app/assets/${sortedList[0].image}`}
@@ -45,7 +46,8 @@
 
         @media (min-width: 1440px) {
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, calc(185px + 0.75rem)) repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-auto-rows: minmax(min-content, fit-content);
         }
     }
 
@@ -59,6 +61,11 @@
         @media (min-width: 1024px) {
             grid-row: 1 / 3;
             grid-column: 1 / 3;
+        }
+
+        @media (min-width: 1440px) {
+            grid-row: 1 / 4;
+            grid-column: 1 / 4;
         }
     }
 
