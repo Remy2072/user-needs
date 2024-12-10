@@ -31,14 +31,14 @@
     }
 
     h2 {
-        margin-top: 50px;
-        font-size: 30px;
+        margin-top: 3.125rem;
+        font-size: 1.875rem;
         color: var(--blue);
     }
 
     p {
         margin-top: 5px;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 1.6;
         color: var(--blue);
     }
@@ -46,7 +46,7 @@
     @media (min-width: 1224px) {
         section {
             flex-direction: row; 
-            gap: 20px;
+            gap: 1.25rem;
         }
 
         article,
@@ -58,7 +58,7 @@
         img {
             width: 100%;
             height: auto;
-            margin-top: 50px;
+            margin-top: 3.125rem;
         }
 
         p {
@@ -68,11 +68,11 @@
 
     @media (min-width: 1440px) {
         h2 {
-            font-size: 40px;
+            font-size: 2.5rem;
         }
 
         p {
-            font-size: 20px;
+            font-size: 1.25rem;
             font-weight: var(--font-weight-semi);
         }
     }
