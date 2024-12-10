@@ -1,6 +1,7 @@
 // Reexport your entry components here
 
 export { default as Heading } from './display/Heading.svelte'
+export { default as About } from './display/About.svelte'
 
 export { default as Anchor } from './inputs/Anchor.svelte'
 export { default as Card } from './inputs/Card.svelte'
