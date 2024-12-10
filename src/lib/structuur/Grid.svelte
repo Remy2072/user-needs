@@ -3,20 +3,33 @@
 
     export let data;
 
+    const now = new Date();
+
     $: sortedList =
         data?.weLoveWebList
             ?.filter((item) => item.status === "published")
             ?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) ||
         [];
+
+    $: nextUpcoming = 
+        sortedList.reduce((closest, item) => {
+            const itemDate = new Date(item.date_time);
+            if (
+                itemDate >= now &&
+                (!closest || itemDate < new Date(closest.date_time))
+            ) {
+                return item;
+            }
+            return closest;
+        }, null) || sortedList[0]; 
 </script>
 
 <section>
     {#if sortedList.length > 0}
-
         <picture>
             <img
-                src={`https://fdnd-agency.directus.app/assets/${sortedList[0].image}`}
-                alt={sortedList[0].speaker || "Onbekende spreker"}
+                src={`https://fdnd-agency.directus.app/assets/${nextUpcoming.image}`}
+                alt={nextUpcoming.speaker || "Onbekende spreker"}
             />
         </picture>
 

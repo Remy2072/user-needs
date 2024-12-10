@@ -1,5 +1,5 @@
 <script>
-    import { Footer, Heading, Navigation, Grid } from "$lib";
+    import { Navigation, Heading, Grid, About, Footer} from "$lib";
 
     export let data;
 </script>
@@ -9,6 +9,7 @@
 <div class="container">
     <Heading />
     <Grid {data} />
+    <About />
 </div>
 
 <Footer />
