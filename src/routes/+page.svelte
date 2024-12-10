@@ -1,5 +1,5 @@
 <script>
-    import { Footer, Navigation, Heading, Grid } from "$lib";
+    import { Footer, Heading, Navigation, Grid } from "$lib";
 
     export let data;
 </script>
