@@ -104,12 +104,6 @@
     time {
         font-weight: var(--font-weight-semi);
         font-size: 1.25rem;
-        color: var(--black);
-    }
-
-    time:nth-child(2) {
-        font-weight: var(--font-weight-bold);
-        font-size: var(--font-size-md);
-        color: var(--fifthyshadesofgrey);
+        color: var(--blue);
     }
 </style>
