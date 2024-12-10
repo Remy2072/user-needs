@@ -1,5 +1,5 @@
 <script>
-    import { Svg, Anchor } from "$lib";
+    import { Anchor, Svg } from "$lib";
 </script>
 
 <footer>
