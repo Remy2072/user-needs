@@ -1,7 +1,7 @@
 <section>
     <header>
-        <small>GEORGANISEERDE GASTCOLLEGES</small>
-        <h1>We Love Web</h1>
+        <small>Laat je inspireren door experts!</small>
+        <h1>We ❤️ Web</h1>
     </header>
     <div>
         <a href="#/">Archief</a>
