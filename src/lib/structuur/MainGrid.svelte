@@ -60,8 +60,6 @@
 
         @media (min-width: 1440px) {
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            grid-auto-rows: minmax(min-content, fit-content);
         }
     }
 

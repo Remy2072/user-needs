@@ -86,7 +86,7 @@
         flex-direction: column;
         max-width: 800px;
         width: 100%;
-        color: var(--blue);
+        color: var(--white);
     }
 
     footer article h2 {

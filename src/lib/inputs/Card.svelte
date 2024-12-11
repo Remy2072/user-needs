@@ -27,7 +27,7 @@
     $: isPast = new Date(date_time) < new Date();
 </script>
 
-<article class:is-past={isPast}>
+<article class:is-next-upcoming={isNextUpcoming} class:is-past={isPast}>
     <a href={link} aria-label="We Love Web Event">
         <h2 class:is-next-upcoming={isNextUpcoming}>{title}</h2>
         <h3>{speaker}</h3>
@@ -50,6 +50,10 @@
     article.is-past::before {
         background-color: var(--fifthyshadesofgrey);
     }
+
+    article.is-next-upcoming:hover {
+    border: solid 2px var(--green);
+}
 
     article {
         border: solid 2px rgba(233, 224, 233, 65);
@@ -79,7 +83,7 @@
 
     h2 {
         color: var(--purple);
-        font-size: 1.4rem;
+        font-size: 1.25rem;
     }
 
     h2.is-next-upcoming {
@@ -94,7 +98,7 @@
     }
 
     p {
-        margin-top: 1.375rem;
+        margin-top: 5px;
         color: var(--fifthyshadesofgrey);
         font-weight: var(--font-weight-reg);
         font-size: var(--font-size-sm);
@@ -110,5 +114,16 @@
         font-weight: var(--font-weight-semi);
         font-size: 1.25rem;
         color: var(--blue);
+    }
+
+    @media screen and (min-width: 768px) {
+        h2 {
+        color: var(--purple);
+        font-size: 1.4rem;
+    }
+
+    p {
+        margin-top: 1.375rem;
+    }
     }
 </style>
