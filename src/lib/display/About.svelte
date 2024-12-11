@@ -32,7 +32,7 @@
 
     h2 {
         margin-top: 3.125rem;
-        font-size: 1.875rem;
+        font-size: 1.375rem;
         color: var(--blue);
     }
 
@@ -60,6 +60,10 @@
             height: auto;
             margin-top: 3.125rem;
         }
+
+        h2 {
+        font-size: 1.875rem;
+    }
 
         p {
             font-weight: var(--font-weight-semi);
