@@ -80,8 +80,8 @@
         }
 
         @media (min-width: 1440px) {
-            grid-row: 1 / 4;
-            grid-column: 1 / 4;
+            grid-row: 1 / 3;
+            grid-column: 1 / 3;
         }
     }
 
