@@ -40,6 +40,7 @@
                 job={item.job_title}
                 link={item.website_link}
                 date_time={item.date_time}
+                isNextUpcoming={item === nextUpcoming}
             />
         {/each}
     {/if}
@@ -70,6 +71,8 @@
         overflow: hidden;
         display: flex;
         align-items: center;
+        border: 2px solid var(--green);
+        border-radius: 1.563rem;
 
         @media (min-width: 1024px) {
             grid-row: 1 / 3;
