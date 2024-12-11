@@ -4,6 +4,7 @@
     export let job = "";
     export let link = "";
     export let date_time = "";
+    export let isNextUpcoming = false;
 
     const formatTime = (dateTime) => {
         const date = new Date(dateTime);
@@ -28,7 +29,7 @@
 
 <article class:is-past={isPast}>
     <a href={link} aria-label="We Love Web Event">
-        <h2>{title}</h2>
+        <h2 class:is-next-upcoming={isNextUpcoming}>{title}</h2>
         <h3>{speaker}</h3>
         <p>{job}</p>
         <div>
@@ -79,6 +80,10 @@
     h2 {
         color: var(--purple);
         font-size: 1.4rem;
+    }
+
+    h2.is-next-upcoming {
+        color: var(--green);
     }
 
     h3 {
