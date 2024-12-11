@@ -28,21 +28,21 @@
 
 <article class:is-past={isPast}>
     <a href={link} aria-label="We Love Web Event">
-        <h2 class:is-past={isPast}>{title}</h2>
-        <h3 class:is-past={isPast}>{speaker}</h3>
-        <p class:is-past={isPast}>{job}</p>
+        <h2>{title}</h2>
+        <h3>{speaker}</h3>
+        <p>{job}</p>
         <div>
-            <time class:is-past={isPast}>{formattedTime}</time>
-            <time class:is-past={isPast}>{formattedDate}</time>
+            <time>{formattedTime}</time>
+            <time>{formattedDate}</time>
         </div>
     </a>
 </article>
 
 <style>
-    h2.is-past,
-    h3.is-past,
-    p.is-past,
-    time.is-past {
+    article.is-past h2,
+    article.is-past h3,
+    article.is-past p,
+    article.is-past time {
         color: var(--fifthyshadesofgrey);
     }
 
