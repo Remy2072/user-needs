@@ -6,6 +6,9 @@
     <article>
         <h2>FDND Microsites</h2>
         <p>
+            Zin om een presentatie te geven, of kijk je liever mee? Het kan allebei! Klik op de contactknop en meld je aan!
+        </p>
+        <p>
             FDND maakt gebruik van microsites. Microsites zijn kleine websites
             ter ondersteuning van een campagne, informatie over een product,
             dienst of voor een ander specifiek doel.
