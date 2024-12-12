@@ -62,6 +62,7 @@
         padding: 1.25rem 1.5rem 1.25rem 2.875rem;
         background-color: transparent;
         cursor: pointer;
+        transition: 0.7s;
     }
 
     article::before {
@@ -78,7 +79,6 @@
     article:hover {
         border: solid 2px var(--blue);
         transform: scale(1.05);
-        transition: 0.7s;
     }
 
     h2 {

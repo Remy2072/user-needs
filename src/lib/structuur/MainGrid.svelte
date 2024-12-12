@@ -50,7 +50,7 @@
     section {
         display: grid;
         width: 100%;
-        grid-template-rows: auto;
+        grid-template-rows: 1fr;
         grid-template-columns: 1;
         gap: 1.5rem;
 
@@ -65,7 +65,7 @@
 
     section picture {
         width: 100%;
-        height: auto;
+        height: 100%;
         overflow: hidden;
         display: flex;
         align-items: center;
@@ -78,15 +78,16 @@
         }
 
         @media (min-width: 1440px) {
-            grid-row: 1 / 3;
-            grid-column: 1 / 3;
+            height: 385px;
+            grid-row: 1 / span 2;
+            grid-column: 1 / span 2;
         }
     }
 
     section picture img {
         width: 100%;
         height: 100%;
-        object-fit: fill;
+        object-fit: cover;
         border-radius: 1.563rem;
         border: 2px solid #e9e0e965;
     }
