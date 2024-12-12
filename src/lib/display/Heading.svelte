@@ -4,7 +4,7 @@
         <h1>We ❤️ Web</h1>
     </header>
     <div>
-        <a href="#/">Archief</a>
+        <a href="./detail">Archief</a>
     </div>
 </section>
 
