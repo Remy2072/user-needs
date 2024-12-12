@@ -1,19 +1,22 @@
 <script>
-    import { Navigation, Heading, Grid, About, Footer, Credits} from "$lib";
+    import { Navigation, Heading, Grid, About, Footer, Credits } from "$lib";
+    import { fly } from "svelte/transition";
 
     export let data;
 </script>
 
-<Navigation />
+<div in:fly={{ y: 200, duration: 500 }} out:fly={{ y: -200, duration: 500 }}>
+    <Navigation />
 
-<div class="container">
-    <Heading />
-    <Grid {data} />
-    <About />
-    <Credits />
+    <div class="container">
+        <Heading />
+        <Grid {data} />
+        <About />
+        <Credits />
+    </div>
+
+    <Footer />
 </div>
-
-<Footer />
 
 <style>
     .container {

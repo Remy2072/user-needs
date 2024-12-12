@@ -1,10 +1,15 @@
+<script>
+    import { fade } from 'svelte/transition';
+
+</script>
+
 <section>
     <header>
         <small>Laat je inspireren door experts!</small>
         <h1>We ❤️ Web</h1>
     </header>
     <div>
-        <a href="#/">Archief</a>
+        <a href="/detail">Archief</a>
     </div>
 </section>
 
