@@ -311,6 +311,12 @@
     --socials-scale: 29px;
   }
 
+  @media (max-width: 425px) {
+    .logo-md-container {
+    max-width: 182.5px;
+  }
+  }
+
   @media (min-width: 768px) {
     :root {
       --socials-scale: calc(29px * 1.2);
