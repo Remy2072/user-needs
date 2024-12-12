@@ -1,7 +1,25 @@
 <script>
     import { Svg } from "$lib";
+    import { onMount } from "svelte";
 
-    let menuOpen = $state(false);
+    let currentSvg = "hva-md";
+
+    function updateSvg() {
+        const width = window.innerWidth;
+        if (width >= 1024) {
+            currentSvg = "hva-lg";
+        } else {
+            currentSvg = "hva-md";
+        }
+    }
+
+    onMount(() => {
+        updateSvg();
+        window.addEventListener("resize", updateSvg);
+        return () => window.removeEventListener("resize", updateSvg);
+    });
+
+    let menuOpen = false;
 
     function toggleMenu() {
         menuOpen = !menuOpen;
@@ -10,13 +28,14 @@
 
 <nav>
     <ul>
-        <li><Svg name="hva-fdnd" /></li>
+        <li><Svg name={currentSvg} /></li>
         <li>
-            <a href="https://www.instagram.com/fdnd.nl/" aria-label="Link to FDND's Instagram page" target=”_blank” attribute><Svg name="insta" /></a>
-            <a href="https://www.linkedin.com/company/fdnd/" aria-label="Link to FDND's Linkedin page" target=”_blank” attribute><Svg name="linkedin" /></a>
+            <a href="https://www.instagram.com/fdnd.nl/" aria-label="Link to FDND's Instagram page" target="_blank" attribute><Svg name="insta" /></a>
+            <a href="https://www.linkedin.com/company/fdnd/" aria-label="Link to FDND's Linkedin page" target="_blank" attribute><Svg name="linkedin" /></a>
         </li>
     </ul>
 </nav>
+
 
 <style>
     nav {
@@ -115,3 +134,5 @@
         }
     }
 </style>
+
+
