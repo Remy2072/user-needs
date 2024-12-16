@@ -1,19 +1,16 @@
 <script>
-    import { Heading, Grid, About, Credits} from "$lib";
+	let { children } = $props();
+    import { Navigation, Footer } from "$lib";
 
-    export let data;
 </script>
 
-<!-- <Navigation /> -->
+<Navigation />
 
-<!-- <div class="container"> -->
-    <Heading />
-    <Grid {data} />
-    <About />
-    <Credits />
-<!-- </div> -->
+<div class="container">
+    {@render children()}
+</div>
 
-<!-- <Footer />
+<Footer />
 
 <style>
     .container {
@@ -42,4 +39,5 @@
             padding: 1rem 10rem 2rem;
         }
     }
-</style> -->
+</style>
+

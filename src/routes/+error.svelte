@@ -1,5 +1,7 @@
 <script>
     import { page } from "$app/stores";
+    import { Footer } from "$lib";
+
 </script>
 
 <section>
@@ -7,13 +9,14 @@
     <h2>{$page.status}</h2>
 </section>
 
+<Footer />
+
 <style>
     section {
-        background-color: var(--purple);
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        height: 100dvh;
         overflow: hidden;
         box-sizing: border-box;
     }
