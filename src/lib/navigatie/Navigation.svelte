@@ -42,7 +42,7 @@
         width: 100%;
         position: relative;
         padding-top: 1rem;
-        margin-bottom: -1px;
+        margin-bottom: 2rem;
     }
 
     nav ul:nth-child(1) {
