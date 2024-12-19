@@ -3,6 +3,7 @@
 
     export let data;
 
+
     const now = new Date();
 
     $: sortedList =
@@ -30,10 +31,12 @@
 <section>
     {#if sortedList.length > 0}
         <picture>
-            <img
-                src={`https://fdnd-agency.directus.app/assets/${nextUpcoming.image}`}
-                alt={nextUpcoming.speaker || "Onbekende spreker"}
-            />
+            <a href=/{nextUpcoming.uuid}>
+                <img
+                    src={`https://fdnd-agency.directus.app/assets/${nextUpcoming.image}`}
+                    alt={nextUpcoming.speaker || "Onbekende spreker"}
+                />
+            </a>
         </picture>
 
         {#each sortedList as item}
@@ -76,6 +79,7 @@
         align-items: center;
         border: 2px solid var(--green);
         border-radius: 1.563rem;
+        transition: 0.7s;
 
         @media (min-width: 1024px) {
             grid-row: 1 / 3;
@@ -89,7 +93,18 @@
         }
     }
 
-    section picture img {
+    section picture:hover {
+        border: 2px solid var(--green);
+        box-shadow: 0 0 1rem rgba(102, 229, 191, .5);
+        transform: scale(1.05);
+    }
+
+    section picture a {
+        width: 100%;
+        height: 100%;
+    }
+    
+    section picture a img {
         width: 100%;
         height: 100%;
         object-fit: cover;
