@@ -2,9 +2,9 @@
     export let title = "";
     export let speaker = "";
     export let job = "";
-    export let link = "";
     export let date_time = "";
     export let isNextUpcoming = false;
+    export let uuid = "";
 
     const formatTime = (dateTime) => {
         const date = new Date(dateTime);
@@ -28,7 +28,7 @@
 </script>
 
 <article class:is-next-upcoming={isNextUpcoming} class:is-past={isPast}>
-    <a href={link} aria-label="We Love Web Event">
+    <a href={`/${uuid}`} aria-label="We Love Web Event">
         <h2 class:is-next-upcoming={isNextUpcoming}>{title}</h2>
         <h3>{speaker}</h3>
         <p>{job}</p>
@@ -52,8 +52,8 @@
     }
 
     article.is-next-upcoming:hover {
-    border: solid 2px var(--green);
-}
+        border: solid 2px var(--green);
+    }
 
     article {
         border: solid 2px rgba(233, 224, 233, 65);
@@ -118,12 +118,12 @@
 
     @media screen and (min-width: 768px) {
         h2 {
-        color: var(--purple);
-        font-size: 1.4rem;
-    }
+            color: var(--purple);
+            font-size: 1.4rem;
+        }
 
-    p {
-        margin-top: 1.375rem;
-    }
+        p {
+            margin-top: 1.375rem;
+        }
     }
 </style>

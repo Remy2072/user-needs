@@ -5,10 +5,13 @@ export async function load() {
     const endpoint = "/items/fdnd_wlw_session";
 
     const weLoveWeb_url = `${baseUrl}${endpoint}`;
+    const response = await fetchJson(weLoveWeb_url);
 
-    const weLoveWeb = await fetchJson(weLoveWeb_url);
+    if (!response || !response.data) {
+        throw new Error("Failed to fetch data");
+    }
 
     return {
-        weLoveWebList: weLoveWeb.data,
+        weLoveWebList: response.data,
     };
 }

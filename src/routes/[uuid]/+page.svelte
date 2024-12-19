@@ -1,31 +1,64 @@
 <script>
     import { Svg } from "$lib";
+
+    export let data;
+
+    let details = data.details;
+
+    const formatDateTime = (dateTime) => {
+        const date = new Date(dateTime);
+
+        const rawDayName = new Intl.DateTimeFormat("nl-NL", {
+            weekday: "long",
+        }).format(date);
+        const dayName =
+            rawDayName.charAt(0).toUpperCase() +
+            rawDayName.slice(1).toLowerCase();
+
+        const day = date.getDate();
+        const monthName = new Intl.DateTimeFormat("nl-NL", {
+            month: "long",
+        }).format(date);
+        const year = date.getFullYear();
+
+        const time = date.toLocaleTimeString("nl-NL", {
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+
+        return { dayName, day, monthName, year, time };
+    };
+
+    $: formattedDateTime = formatDateTime(details.date_time);
 </script>
 
 <header>
     <article>
-        <h1>Sprint 1 | Sprint 13</h1>
-        <small>Vrijdag 13 December 2024 · 13:00 - 14:00 uur</small>
+        <h1>{details.title}</h1>
+        <small>
+            {formattedDateTime.dayName}
+            {formattedDateTime.day}
+            {formattedDateTime.monthName}
+            {formattedDateTime.year}
+            <span class="red-circle">·</span>
+            {formattedDateTime.time}
+        </small>
     </article>
 
     <a href="/">Terug</a>
 </header>
 
-<img src="/img/kv.png" alt="" />
+<img
+    src={`https://fdnd-agency.directus.app/assets/${details.image}`}
+    alt="Foto van de spreker"
+/>
 <section>
     <article>
-        <h2>Kilian Valkhof</h2>
-        <h3>Developer</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc suscipit
-            posuere tellus ac sodales. Fusce hendrerit elit dictum, mattis ipsum
-            facilisis, facilisis felis. Duis facilisis arcu pharetra Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.<br /><br />Nunc suscipit
-            posuere tellus ac sodales. Fusce hendrerit elit dictum, mattis ipsum
-            facilisis, facilisis felis. Duis facilisis arcu.
-        </p>
+        <h2>{details.speaker}</h2>
+        <h3>{details.job_title}</h3>
+        <p>{details.description || "Geen beschrijving gevonden."}</p>
     </article>
-    
+
     <aside>
         <div>
             <h3>Onderwerp(en)</h3>
@@ -37,19 +70,30 @@
                 <li>SEO</li>
             </ul>
         </div>
-    
+
         <nav>
             <h3>Nuttige link(s)</h3>
             <ul>
-                <li><a href="https://www.hva.nl/"><span>HvA</span><Svg name="arrow-right" /></a></li>
-                <li><a href="https://fdnd.nl/"><span>FDND</span><Svg name="arrow-right" /></a></li>
+                <li>
+                    <a href={details.website_link}
+                        ><span>Portfolio</span><Svg name="arrow-right" /></a
+                    >
+                </li>
+                <li>
+                    <a href={details.website_link_2}
+                        ><span>Bedrijf</span><Svg name="arrow-right" /></a
+                    >
+                </li>
             </ul>
         </nav>
     </aside>
 </section>
 
-
 <style>
+    .red-circle {
+        color: var(--purple);
+    }
+
     header {
         color: var(--blue);
         display: flex;
@@ -58,7 +102,7 @@
         @media (min-width: 768px) {
             margin-top: 1.5rem;
         }
-        
+
         @media (min-width: 1024px) {
             flex-direction: row;
             justify-content: space-between;
@@ -68,7 +112,7 @@
 
     header article h1 {
         font-size: 1.8rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
 
         @media (min-width: 1024px) {
             font-size: 2.6rem;
@@ -174,13 +218,13 @@
 
         @media (min-width: 1024px) {
             flex-direction: column;
-            
+
             ::before {
                 content: "";
                 position: absolute;
                 height: 100%;
                 width: 2px;
-                background-color: #E9E0E9;
+                background-color: #e9e0e9;
                 left: -1rem;
                 top: 0;
             }
@@ -192,15 +236,11 @@
         margin-bottom: 1.5rem;
     }
 
-    aside div {
-
-    }
-
     aside div ul {
         list-style-type: none;
         display: flex;
         flex-wrap: wrap;
-        gap: .4rem;
+        gap: 0.4rem;
         max-width: 80%;
 
         @media (min-width: 1024px) {
@@ -209,11 +249,12 @@
     }
 
     aside div ul li {
-        padding: .2rem 1rem;
+        padding: 0.2rem 1rem;
         background-color: red;
         border-radius: 5rem;
         font-weight: 600;
         color: var(--blue);
+        cursor: pointer;
     }
 
     aside div ul li:nth-child(1) {
@@ -227,10 +268,10 @@
         color: var(--white);
     }
     aside div ul li:nth-child(4) {
-        background-color: #FF86F9;
+        background-color: #ff86f9;
     }
     aside div ul li:nth-child(5) {
-        background-color: #86BCFF;
+        background-color: #86bcff;
         color: var(--white);
     }
 
@@ -246,32 +287,33 @@
 
     aside nav ul li {
         margin-bottom: 1rem;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
         width: fit-content;
     }
-    
+
     aside nav ul li a {
         font-size: 1.5rem;
         font-weight: 600;
         color: var(--blue);
         display: flex;
         align-items: center;
+        cursor: pointer;
     }
-    aside nav ul li a span{
-        margin-right: .8rem;
+    aside nav ul li a span {
+        margin-right: 0.8rem;
     }
 
     aside nav ul li:hover {
-            margin-left: 5px;
-            opacity: 85%;
-            transition: .3s ease-in-out;
-        }
+        margin-left: 5px;
+        opacity: 85%;
+        transition: 0.3s ease-in-out;
+    }
 
     @media screen and (min-width: 768px) {
         section {
             margin-top: 1.563rem;
         }
-        
+
         img {
             border-radius: 1.25rem;
         }
@@ -301,7 +343,7 @@
         section {
             margin-top: 3.125rem;
         }
-        
+
         img {
             border-radius: 1.5rem;
         }
