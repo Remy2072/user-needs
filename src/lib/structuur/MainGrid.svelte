@@ -5,7 +5,6 @@
 
     const now = new Date();
 
-    // Filter and sort events
     $: sortedList =
         data?.weLoveWebList
             ?.filter((item) => {
@@ -15,7 +14,6 @@
             ?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) ||
         [];
 
-    // Find the next upcoming event
     $: nextUpcoming =
         sortedList.reduce((closest, item) => {
             const itemDate = new Date(item.date_time);
