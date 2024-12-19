@@ -11,7 +11,7 @@
             ?.sort((a, b) => new Date(b.date_time) - new Date(a.date_time)) ||
         [];
 
-    $: nextUpcoming = 
+    $: nextUpcoming =
         sortedList.reduce((closest, item) => {
             const itemDate = new Date(item.date_time);
             if (
@@ -21,7 +21,7 @@
                 return item;
             }
             return closest;
-        }, null) || sortedList[0]; 
+        }, null) || sortedList[0];
 </script>
 
 <section>
@@ -40,6 +40,7 @@
                 job={item.job_title}
                 link={item.website_link}
                 date_time={item.date_time}
+                uuid={item.uuid}
                 isNextUpcoming={item === nextUpcoming}
             />
         {/each}

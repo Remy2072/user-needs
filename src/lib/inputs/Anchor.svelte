@@ -2,10 +2,10 @@
     /**
      * @typedef {Object} Props
      * @property {string} [anchorLink]
-     * @property {string} [anchorText] 
+     * @property {string} [anchorText]
      * @property {string} [anchorLabel]
-     * @property {string} [backgroundColor] 
-     * @property {string} [padding] 
+     * @property {string} [backgroundColor]
+     * @property {string} [padding]
      */
 
     export let anchorLink = "#";

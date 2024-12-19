@@ -20,7 +20,7 @@
 <style>
     section {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         gap: 10px;
     }
 
@@ -45,7 +45,7 @@
 
     @media (min-width: 1224px) {
         section {
-            flex-direction: row; 
+            flex-direction: row;
             gap: 1.25rem;
         }
 
@@ -62,8 +62,8 @@
         }
 
         h2 {
-        font-size: 1.875rem;
-    }
+            font-size: 1.875rem;
+        }
 
         p {
             font-weight: var(--font-weight-semi);
