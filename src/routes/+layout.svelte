@@ -1,7 +1,6 @@
 <script>
 	let { children } = $props();
     import { Navigation, Footer } from "$lib";
-
 </script>
 
 <Navigation />
@@ -15,7 +14,7 @@
 <style>
     .container {
         width: 100%;
-        background: var(--container-gradient);
+        background: var(--grey);
         border-radius: 1.563rem;
         padding: 3.125rem 2.188rem;
     }

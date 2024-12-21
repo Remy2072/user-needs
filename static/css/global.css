@@ -42,7 +42,7 @@ body {
 }
 
 body {
-    background: var(--body-gradient);
+    background: var(--purple);
     padding: 0px 1rem 0px 1rem;
 }
 
